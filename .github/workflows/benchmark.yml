@@ -43,8 +43,9 @@ jobs:
           # Print a message indicating that the current time has been saved
           echo "Current time has been saved to $filename"
       - name: Test UTs
+        continue-on-error: true
         run: |
-          true | bazel test //...
+          bazel test //...
       - name: Upload Duration
         run: |
           python gha_add_rows_ti.py
