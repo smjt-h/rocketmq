@@ -44,7 +44,7 @@ jobs:
           echo "Current time has been saved to $filename"
       - name: Test UTs
         run: |
-          bazel test //...
+          true | bazel test //...
       - name: Upload Duration
         run: |
           python gha_add_rows_ti.py
